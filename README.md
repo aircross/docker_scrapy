@@ -12,11 +12,12 @@
 curl -fsSL https://get.docker.com | sh
 ```
 2. 安装
-### 在PKG中填入你需要安装的包
+### 当前目录为执行目录，即项目存放目录
 ```shell
+# 下面的命令代表/opt/dokcer/scrapy作为项目目录
+# 将需要安装的包要求填入运行目录req.txt文件中
 mkdir /opt/dokcer && mkdir /opt/dokcer/scrapy && cd /opt/dokcer/scrapy
 docker run -itd --network=host \
-    -e PKG='pymysql' \
     -v .:/app/ \
     --name docker_scrapy --restart=always \
     aircross/docker_scrapy:latest

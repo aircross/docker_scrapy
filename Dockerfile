@@ -25,9 +25,9 @@ RUN set -xe \
                           vim-tiny \
                           curl \
                           jq \
+    && SCRAPY_LATEST_VER=$(curl -s https://api.github.com/repos/scrapy/scrapy/releases/latest | grep tag_name | cut -d '"' -f 4) \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt install -y cargo; fi \
     && curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 \
-    SCRAPY_LATEST_VER=$(curl -s https://api.github.com/repos/scrapy/scrapy/releases/latest | grep tag_name | cut -d '"' -f 4) && \
     && pip install --no-cache-dir botocore ipython \
                    https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_LATEST_VER.zip \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt purge -y --auto-remove cargo; fi \

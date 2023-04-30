@@ -2,7 +2,7 @@
  使用docker快速部署你的scrapy项目
 
 目的在于搭建Docker版的Scrapy快速部署环境，可以方便地运行在群辉之类的Docker容器中
-
+[![](http://dockeri.co/image/aircross/scrapy)](https://hub.docker.com/r/aircross/scrapy)
 # 功能介绍
 
 ## 服用方法

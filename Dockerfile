@@ -2,9 +2,8 @@ FROM python:3.12.0a7-alpine3.17
 ENV DEF_VERSION 0.01
 SHELL ["/bin/bash", "-c"]
 RUN set -xe \
-    && echo ${TARGETPLATFORM} \
-    && apt-get update \
-    && apt-get install -y autoconf \
+RUN  apt-get update
+RUN  apt-get install -y autoconf \
                           build-essential \
                           curl \
                           libffi-dev \
@@ -23,12 +22,12 @@ RUN set -xe \
                           tini \
                           vim-tiny \
                           curl \
-                          jq \
-    && SCRAPY_LATEST_VER=$(curl -s https://api.github.com/repos/scrapy/scrapy/releases/latest | grep tag_name | cut -d '"' -f 4) \
-    && curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 \
-    && pip install --no-cache-dir botocore ipython \
-                   https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_LATEST_VER.zip \
-    && apt-get purge -y --auto-remove autoconf \
+                          jq
+RUN  SCRAPY_LATEST_VER=$(curl -s https://api.github.com/repos/scrapy/scrapy/releases/latest | grep tag_name | cut -d '"' -f 4)
+RUN  curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 \
+RUN  pip install --no-cache-dir botocore ipython \
+                   https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_LATEST_VER.zip
+RUN  apt-get purge -y --auto-remove autoconf \
                                       build-essential \
                                       curl \
                                       libffi-dev \
@@ -36,8 +35,8 @@ RUN set -xe \
                                       libtool \
                                       libxml2-dev \
                                       libxslt1-dev \
-                                      python3-dev \
-    && rm -rf /var/lib/apt/lists/*
+                                      python3-dev
+RUN  rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt

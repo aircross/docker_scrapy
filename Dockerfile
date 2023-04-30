@@ -41,7 +41,7 @@ RUN set -xe \
                                       libxslt1-dev \
                                       python3-dev \
     && rm -rf /var/lib/apt/lists/*
-
+COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install scrapy
 RUN pip install -r requirements.txt

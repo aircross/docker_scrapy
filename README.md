@@ -12,6 +12,7 @@
 curl -fsSL https://get.docker.com | sh
 ```
 2. 安装
+### 在PKG中填入你需要安装的包
 ```shell
 mkdir /opt/dokcer && mkdir /opt/dokcer/scrapy && cd /opt/dokcer/scrapy
 docker run -itd --network=host \

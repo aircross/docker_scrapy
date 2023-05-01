@@ -25,8 +25,7 @@ RUN apt-get install -y autoconf \
                           jq
 RUN SCRAPY_LATEST_VER=$(curl -s https://api.github.com/repos/scrapy/scrapy/releases/latest | grep tag_name | cut -d '"' -f 4)
 RUN curl -sSL https://bootstrap.pypa.io/get-pip.py | python3
-RUN pip install --no-cache-dir botocore ipython \
-                   https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_LATEST_VER.zip
+RUN pip install --no-cache-dir botocore ipython https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_LATEST_VER.zip
 RUN apt-get purge -y --auto-remove autoconf \
                                       build-essential \
                                       curl \

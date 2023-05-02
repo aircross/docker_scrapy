@@ -22,7 +22,7 @@
    
    ```shell
    # 下面的命令代表/opt/dokcer/scrapy作为项目目录
-   # 将需要安装的包要求填入运行目录req.txt文件中
+   # 将需要安装的包要求填入运行目录requirements.txt文件中
    mkdir /opt/dokcer && mkdir /opt/dokcer/scrapy && cd /opt/dokcer/scrapy
    docker run -itd --network=host \
     -v .:/app/ \

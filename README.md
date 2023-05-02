@@ -40,9 +40,12 @@
    ```shell
    docker exec -it docker_scrapy /bin/bash
    ```
-   
+   ## 在docker中执行以下命令
+   ### 创建scrapy项目
+   ```shell
+   scrapy startproject scrapy_demo
+   ```
    ### 执行你爬虫项目
-   #### 在docker中执行以下命令
    ```shell
    cd scrapy_demo
    scrapy crawl spider_demo

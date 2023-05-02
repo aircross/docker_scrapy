@@ -1,6 +1,6 @@
 FROM python:3.11.3-bullseye
 ENV DEF_VERSION 0.01
-SHELL ["/bin/bash", "-c"]
+# SHELL ["/bin/bash", "-c"]
 RUN set -xe
 RUN apt-get update
 RUN apt-get install -y autoconf \

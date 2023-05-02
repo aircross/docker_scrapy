@@ -42,6 +42,7 @@
    ```
    
    ### 执行你爬虫项目
+   #### 在docker中执行以下命令
    ```shell
    cd scrapy_demo
    scrapy crawl spider_demo

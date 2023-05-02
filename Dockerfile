@@ -1,5 +1,6 @@
 FROM python:3.11.3-bullseye
 ENV DEF_VERSION 0.01
+ENV UPDATE_FLAG 1
 # SHELL ["/bin/bash", "-c"]
 RUN set -xe
 RUN apt-get update

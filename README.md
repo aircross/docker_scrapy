@@ -46,5 +46,4 @@
    ```shell
    cd scrapy_demo
    scrapy crawl spider_demo
-   
    ```

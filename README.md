@@ -40,3 +40,8 @@
    ```
    
    ### 执行你爬虫项目
+   ```
+   cd scrapy_demo
+   scrapy crawl spider_demo
+   
+   ```

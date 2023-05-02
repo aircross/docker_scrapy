@@ -19,10 +19,13 @@ curl -fsSL https://get.docker.com | sh
 mkdir /opt/dokcer && mkdir /opt/dokcer/scrapy && cd /opt/dokcer/scrapy
 docker run -itd --network=host \
     -v .:/app/ \
-    --name docker_scrapy --restart=always \
+    --name docker_scrapy --restart=unless-stopped \
     aircross/docker_scrapy:latest
 ```
 2. 使用
+复制你的项目代码到/opt/dokcer/scrapy
+在宿主机运行一下命令进入到docker版的scrapy环境
 ```
-待补充
+docker exec -it docker_scrapy /bin/bash
 ```
+执行你爬虫项目

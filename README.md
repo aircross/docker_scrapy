@@ -23,8 +23,8 @@ docker run -itd --network=host \
     aircross/docker_scrapy:latest
 ```
 2. 使用
-复制你的项目代码到/opt/dokcer/scrapy
-在宿主机运行一下命令进入到docker版的scrapy环境
+# 复制你的项目代码到/opt/dokcer/scrapy
+# 在宿主机运行一下命令进入到docker版的scrapy环境
 ```
 docker exec -it docker_scrapy /bin/bash
 ```
